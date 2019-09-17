@@ -16,4 +16,4 @@ jobs:
     - name: Build with Maven
       run: mvn package --file pom.xml
     - name: Maven Deploy
-      run: mvn deploy -Dregistry=https://maven.pkg.github.com/GaneshBabu-J -Dtoken=6c16be172bb1698b3fde727734e93a243cfaae64
+      run: mvn deploy -Dregistry=https://maven.pkg.github.com/GaneshBabu-J -Dtoken=afd0868f94cf9d65c286453fa0f23b1ea479d338
