@@ -179,6 +179,12 @@
                 <artifactId>jetty-maven-plugin</artifactId>
                 <version>9.2.3.v20140905</version>
             </plugin>
+	          <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-deploy-plugin</artifactId>
+        <version>3.0.0-M1</version>
+      </plugin>
+  
 			
 						<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
@@ -213,16 +219,7 @@
     </plugins>
   </reporting>
 	
-    <deploy>
-    <plugins>
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-deploy-plugin</artifactId>
-        <version>3.0.0-M1</version>
-      </plugin>
-     </plugins>
-     </deploy>
-  
+
       <profiles>
         <profile>
             <id>development</id>
