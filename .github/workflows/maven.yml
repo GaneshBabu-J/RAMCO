@@ -16,7 +16,7 @@ jobs:
     - name: Build with Maven
       run: mvn package --file pom.xml
     - name: secrete token
-      run: echo Hello world ${PACKAGE}
+      run: echo Hello world ${secrets.PACKAGE}
     - name: Maven Deploy
       run: mvn deploy -Dregistry=https://maven.pkg.github.com/GaneshBabu-J
     
