@@ -23,8 +23,8 @@ jobs:
       - uses: actions/setup-java@v1
         with:
           java-version: 1.8
-          registry-url: https://maven.pkg.github.com/
-          scope: 'GaneshBabu-J'  #@your-github-username
+          registry-url: https://mymavenrepo.com/repo/v0F1jrJ7K2jS9H87oBux/ 
+#scope: 'GaneshBabu-J'  #@your-github-username
       - run: mvn deploy -e -X #-Dregistry=https://maven.pkg.github.com/GaneshBabu-J -Dtoken=GH_TOKEN
         env:
           MAVEN_AUTH_TOKEN: ${{secrets.SANDESH}}  #GITHUB_TOKEN_NPM
