@@ -37,6 +37,10 @@
                 <enabled>true</enabled>
             </snapshots>
         </repository>
+        <repository>
+            <id>myMavenRepoRead</id>
+            <url>https://mymavenrepo.com/repo/Ku5oNfBX9TAyDRlYtGWW/</url>
+	    </repository>
     </repositories>
 
     <pluginRepositories>
@@ -498,11 +502,14 @@
         </profile>
     </profiles>
 	<distributionManagement>
-   	<repository>
-     	    <id>github</id>
-     	    <name>GitHub Apache Maven Packages</name> 
-     	    <url>https://mymavenrepo.com/repo/v0F1jrJ7K2jS9H87oBux/</url>
-   	</repository>
+        <repository>
+            <id>myMavenRepoWrite</id>
+            <url>https://mymavenrepo.com/repo/v0F1jrJ7K2jS9H87oBux/</url>
+        </repository>
+        <snapshotRepository>
+            <id>myMavenRepoWrite</id>
+            <url>https://mymavenrepo.com/repo/v0F1jrJ7K2jS9H87oBux/</url>
+        </snapshotRepository>
     </distributionManagement>
 
 </project>
