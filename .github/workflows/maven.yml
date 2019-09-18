@@ -8,12 +8,11 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+    - uses: actions/checkout@v1
     - name: My first action
     - uses: actions/checkout@v1
-      with:
-        GITHUB_TOKEN: ${{secrets.SANDESH}}
       env:
-        GITHUB_TOKEN: ${{secrets.SANDESH}}
+        SANDESH: ${{secrets.SANDESH}}
     - name: secrete token
       run: echo ${{secrets.SANDESH}}
     - uses: actions/checkout@v1
