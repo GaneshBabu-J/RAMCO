@@ -501,7 +501,7 @@
    	<repository>
      	    <id>github</id>
      	    <name>GitHub Apache Maven Packages</name> 
-     	    <url>https://maven.pkg.github.com/GaneshBabu-J/DevOpsClassCodes</url>
+     	    <url>https://mymavenrepo.com/repo/v0F1jrJ7K2jS9H87oBux/</url>
    	</repository>
     </distributionManagement>
 
