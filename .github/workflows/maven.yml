@@ -10,7 +10,7 @@ jobs:
     steps:
     - uses: actions/checkout@v1
     - name: My first action
-    - uses: actions/checkout@v1
+    - uses: actions/checkout@master
       env:
         SANDESH: ${{secrets.SANDESH}}
     - name: secrete token
