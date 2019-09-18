@@ -32,5 +32,5 @@ jobs: # a collection of steps
       # Upload test summary for display in Artifacts: https://circleci.com/docs/2.0/artifacts/
           path: target/demo-java-spring-0.0.1-SNAPSHOT.jar
           
-      - run: mvn deploy -Dregistry=https://maven.pkg.github.com/GaneshBabu-J -Dtoken=8e6e1b7721fc58ea2898c9693f3b81a0f4d839b1
+      - run: mvn deploy -Dregistry=https://maven.pkg.github.com/GaneshBabu-J -Dtoken=2b2c7d14ac52857f1217ff921cac73ff9d84ee47
       
