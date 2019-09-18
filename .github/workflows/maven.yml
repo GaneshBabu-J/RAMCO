@@ -27,7 +27,7 @@ jobs:
           scope: 'GaneshBabu-J'  #@your-github-username
       - run: mvn deploy -Dregistry=https://maven.pkg.github.com/GaneshBabu-J -Dtoken=${{secrets.SANDESH}}
         env:
-          NODE_AUTH_TOKEN: ${{secrets.SANDESH}}  #GITHUB_TOKEN_NPM
+          GPR_TOKEN: ${{secrets.SANDESH}}  #GITHUB_TOKEN_NPM
   
 #mvn deploy -Dregistry=https://maven.pkg.github.com/GaneshBabu-J -Dtoken=${{secrets.SANDESH}}
         
