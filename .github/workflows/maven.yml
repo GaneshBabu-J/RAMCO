@@ -25,7 +25,7 @@ jobs:
           java-version: 1.8
           registry-url: https://maven.pkg.github.com/
           scope: 'GaneshBabu-J'  #@your-github-username
-      - run: mvn deploy #-Dregistry=https://maven.pkg.github.com/GaneshBabu-J -Dtoken=GH_TOKEN
+      - run: mvn deploy -e #-Dregistry=https://maven.pkg.github.com/GaneshBabu-J -Dtoken=GH_TOKEN
         env:
           GH_TOKEN: ${{secrets.GITHUB_TOKEN}}  #GITHUB_TOKEN_NPM
   
