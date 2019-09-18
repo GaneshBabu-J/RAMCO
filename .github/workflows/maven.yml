@@ -15,8 +15,8 @@ jobs:
         java-version: 1.8
     - name: Build with Maven
       run: mvn package --file pom.xml
-    - name: Maven Deploy
-      run: mvn deploy -Dregistry=https://maven.pkg.github.com/GaneshBabu-J
     - name: secrete token
       run: echo Hello world ${PACKAGE}
-      
+    - name: Maven Deploy
+      run: mvn deploy -Dregistry=https://maven.pkg.github.com/GaneshBabu-J
+    
