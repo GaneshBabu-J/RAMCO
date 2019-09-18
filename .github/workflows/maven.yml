@@ -19,4 +19,4 @@ jobs:
       run: mvn deploy -Dregistry=https://maven.pkg.github.com/GaneshBabu-J -Dtoken= ${{ secrets.Package }}
     - name: secrete token
       env:
-        GITHUB_TOKEN: ${{ secrets.Package }}
+        Package: ${{ secrets.Package }}
