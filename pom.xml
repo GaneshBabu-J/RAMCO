@@ -501,7 +501,7 @@
    	<repository>
      	    <id>github</id>
      	    <name>GitHub Apache Maven Packages</name> # removed the OWNER
-     	    <url>https://maven.pkg.github.com/GaneshBabu-J</url>
+     	    <url>https://maven.pkg.github.com/GaneshBabu-J/DevOpsClassCodes</url>
    	</repository>
     </distributionManagement>
 
