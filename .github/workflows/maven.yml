@@ -18,8 +18,10 @@ jobs:
     - name: Build with Maven
       run: mvn package --file pom.xml
     - name: My first action
+      with:
+        GITHUB_TOKEN: ${{secrets.SANDESH}}
       env:
-        GITHUB_TOKEN: ${{ secrets.SANDESH }}
+        GITHUB_TOKEN: ${{secrets.SANDESH}}
     - name: Maven Deploy
-      run: mvn deploy -Dregistry=https://maven.pkg.github.com/GaneshBabu-J
+      run: mvn deploy -Dregistry=https://maven.pkg.github.com/GaneshBabu-J -Dtoken=${{secrets.SANDESH}}
     
