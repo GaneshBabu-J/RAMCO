@@ -19,6 +19,8 @@ jobs:
       run: mvn package --file pom.xml
     - name: My first action
     - uses: actions/checkout@v1
+      with:
+        GITHUB_TOKEN: ${{secrets.SANDESH}}
       env:
         GITHUB_TOKEN: ${{secrets.SANDESH}}
     - name: Maven Deploy
