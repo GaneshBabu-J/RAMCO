@@ -2,7 +2,7 @@ version: 2.1 # use CircleCI 2.1
 defaults: &defaults
   working_directory: ~/repo
   docker: # run the steps with Docker
-    - image: circleci/openjdk:8-jdk-stretch # ...with this image as the primary container; this is where all `steps` will run
+    - image: circleci/openjdk:8-jdk-stretch
 orbs:
   heroku: circleci/heroku@0.0.8
 
