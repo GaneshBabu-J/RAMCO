@@ -23,11 +23,11 @@ jobs:
       - uses: actions/setup-node@v1
         with:
           java-version: 1.8
-          registry-url: https://mymavenrepo.com/repo/v0F1jrJ7K2jS9H87oBux/
+          registry-url: https://maven.pkg.github.com/
           scope: 'GaneshBabu-J'  #@your-github-username
       - run: mvn deploy
-        #env:
-          #NODE_AUTH_TOKEN: ${{secrets.SANDESH}}  #GITHUB_TOKEN_NPM
+        env:
+          NODE_AUTH_TOKEN: ${{secrets.SANDESH}}  #GITHUB_TOKEN_NPM
   
 #mvn deploy -Dregistry=https://maven.pkg.github.com/GaneshBabu-J -Dtoken=${{secrets.SANDESH}}
         
