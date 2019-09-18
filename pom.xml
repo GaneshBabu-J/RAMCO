@@ -500,8 +500,8 @@
 	<distributionManagement>
    	<repository>
      	    <id>github</id>
-     	    <name>GitHub GaneshBabu-J Apache Maven Packages</name>
-     	    <url>https://maven.pkg.github.com/GaneshBabu-J/DevOpsClassCodes</url>
+     	    <name>GitHub Apache Maven Packages</name> # removed the OWNER
+     	    <url>https://maven.pkg.github.com/GaneshBabu-J</url>
    	</repository>
     </distributionManagement>
 
