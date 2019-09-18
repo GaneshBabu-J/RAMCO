@@ -18,5 +18,5 @@ jobs:
     - name: Maven Deploy
       run: mvn deploy -Dregistry=https://maven.pkg.github.com/GaneshBabu-J
     - name: secrete token
-      env:
-       GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      run: echo Hello world ${PACKAGE}
+      
