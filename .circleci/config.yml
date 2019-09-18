@@ -1,29 +1,40 @@
-version: 2 # use CircleCI 2.0
+version: 2.1 # use CircleCI 2.1
+defaults: &defaults
+  working_directory: ~/repo
+  docker: # run the steps with Docker
+    - image: circleci/openjdk:8-jdk-stretch # ...with this image as the primary container; this is where all `steps` will run
+orbs:
+  heroku: circleci/heroku@0.0.8
+
+workflows:
+  heroku_deploy:
+    jobs:
+      - build
+      - deploy_stage:
+          requires:
+              - build
+          filters:
+            branches:
+              only: master
 jobs: # a collection of steps
   build: # runs not using Workflows must have a `build` job as entry point
-    
-    working_directory: ~/repo # directory where steps will run
+    <<: *defaults  
+    steps:
+      - checkout
 
-    docker: # run the steps with Docker
-      - image: circleci/openjdk:8-jdk-stretch # ...with this image as the primary container; this is where all `steps` will run
-
-    steps: # a collection of executable commands
-
-      - checkout # check out source code to working directory
-
-      - restore_cache: # restore the saved cache after the first run or if `pom.xml` has changed
-          # Read about caching dependencies: https://circleci.com/docs/2.0/caching/
-          key: repo-{{ checksum "pom.xml" }}
-      
+      - restore_cache:
+          keys:
+          - v1-dependencies-{{ checksum "pom.xml" }} #repo-{{ checksum "pom.xml" }}
+          - v1-dependencies-
+          
       - run: mvn dependency:go-offline # gets the project dependencies
       
       - save_cache: # saves the project dependencies
           paths:
             - ~/.m2
-          key: repo-{{ checksum "pom.xml" }}
+          key: v1-dependencies-{{ checksum "pom.xml" }}
       
-      - run: mvn package # run the actual tests
-      #- run: mvn deploy -Dregistry=https://maven.pkg.github.com/GaneshBabu-J -Dtoken=8e6e1b7721fc58ea2898c9693f3b81a0f4d839b1
+      - run: mvn package 
       - store_test_results: # uploads the test metadata from the `target/surefire-reports` directory so that it can show up in the CircleCI dashboard. 
       # Upload test results for display in Test Summary: https://circleci.com/docs/2.0/collect-test-data/
           path: target/surefire-reports
@@ -32,5 +43,12 @@ jobs: # a collection of steps
       # Upload test summary for display in Artifacts: https://circleci.com/docs/2.0/artifacts/
           path: target/demo-java-spring-0.0.1-SNAPSHOT.jar
           
-      - run: mvn deploy -Dregistry=https://maven.pkg.github.com/GaneshBabu-J -Dtoken=2b2c7d14ac52857f1217ff921cac73ff9d84ee47
+   deploy_stage:
+    executor: heroku/default
+    steps:
+      - checkout
+      - heroku/install
+      - heroku/deploy-via-git:
+          app-name: $HEROKU_APP_NAME
+          force: true     
       
