@@ -15,19 +15,23 @@ jobs:
         java-version: 1.8
     - name: Build with Maven
       run: mvn package --file pom.xml
-   
-  deploy:
+      
+   publish-gpr:
     needs: build
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
       - uses: actions/setup-node@v1
         with:
-          registry-url: https://maven.pkg.github.com/GaneshBabu-J
-      - name: deploy
-        run: mvn deploy -Dregistry=https://maven.pkg.github.com/GaneshBabu-J -Dtoken=${{secrets.SANDESH}}
+          node-version: 12
+          registry-url: https://maven.pkg.github.com/
+          scope: 'GaneshBabu-J'  #@your-github-username
+      - run: mvn deploy
         env:
-          NODE_AUTH_TOKEN: ${{secrets.SANDESH}}  #npm_token
+          NODE_AUTH_TOKEN: ${{secrets.SANDESH}}  #GITHUB_TOKEN_NPM
+  
+#mvn deploy -Dregistry=https://maven.pkg.github.com/GaneshBabu-J -Dtoken=${{secrets.SANDESH}}
+        
       
      
     
