@@ -12,22 +12,22 @@ jobs:
       uses: actions/setup-java@v1
       with:
         java-version: 1.8
-   # - name: Inject GitHub Token Into Settings
-   #   run: 
+    - name: Inject GitHub Token Into Settings
+      run: 
      #    sed -i -e 's/GANESH/'$GITHUB_TOKEN'/g' .m2/settings.xml
      #     cat .m2/settings.xml
-     # env:
-    #      GITHUB_TOKEN: ${{secrets.SANDESH}}
+      env:
+         GH_TOKEN: ${{secrets.SANDESH}}
     
           
     - name: Build with Maven
-      run: mvn package -Dserver.password=${{secrets.SANDESH}} # -B -DskipTests clean package
+      run: mvn package             #-Dserver.password=${{secrets.SANDESH}} # -B -DskipTests clean package
     - name: details
       run: cat .m2/settings.xml
     #- name: Run Maven Tests
     #  run: mvn test
     - name: Publish Maven Artifacts
-      run: mvn deploy --settings .m2/settings.xml
+      run: mvn deploy -Dregistry=https://maven.pkg.github.com/GaneshBabu-J -Dtoken=GH_TOKEN                                                    # --settings .m2/settings.xml
       
      
     
