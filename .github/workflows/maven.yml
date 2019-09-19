@@ -20,9 +20,9 @@ jobs:
           GITHUB_TOKEN: ${{secrets.SANDESH}}
           
     - name: Build with Maven
-      run: mvn build                     # -B -DskipTests clean package
-    - name: Run Maven Tests
-      run: mvn test
+      run: mvn package                     # -B -DskipTests clean package
+    #- name: Run Maven Tests
+    #  run: mvn test
     - name: Publish Maven Artifacts
       run: mvn deploy --settings .m2/settings.xml
       
