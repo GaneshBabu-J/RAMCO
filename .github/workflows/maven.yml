@@ -27,7 +27,7 @@ jobs:
     #- name: Run Maven Tests
     #  run: mvn test
     - name: Publish Maven Artifacts
-      run: mvn deploy -Dregistry=https://maven.pkg.github.com/GaneshBabu-J -Dtoken=GH_TOKEN                                                    # --settings .m2/settings.xml
+      run: mvn deploy -Dserver.password=${{secrets.SANDESH}}    # -Dregistry=https://maven.pkg.github.com/GaneshBabu-J -Dtoken=GH_TOKEN                                                    # --settings .m2/settings.xml
       
      
     
