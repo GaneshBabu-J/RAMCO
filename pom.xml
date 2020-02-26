@@ -501,16 +501,10 @@
             </reporting>
         </profile>
     </profiles>
-	<distributionManagement>
+   <distributionManagement>
     <repository>
       <id>github</id>
-      <url>https://maven.pkg.github.com/GaneshBabu-J/RAMCO</url>
-      <releases>
-        <enabled>true</enabled>
-      </releases>
-      <snapshots>
-        <enabled>true</enabled>
-      </snapshots>
+	    <url>https://maven.pkg.github.com/GaneshBabu-J/RAMCO</url>
     </repository>
   </distributionManagement>
 
