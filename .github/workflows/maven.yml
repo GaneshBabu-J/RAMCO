@@ -15,13 +15,13 @@ jobs:
     - name: Inject GitHub Token Into Settings
       run: 
           sed -i -e 's/GANESH/'$GITHUB_TOKEN'/g' .m2/settings.xml
-          cat .m2/settings.xml
+          #cat .m2/settings.xml
       env:
-         GITHUB_TOKEN: ${{secrets.GANESHJ}}
+         GITHUB_TOKEN: ${{secrets.GHE_SECRET}}
     
           
     - name: Build with Maven
-      run: mvn package -Dserver.password=${{secrets.GANESHJ}} -B -DskipTests clean package
+      run: mvn package -Dserver.password=${{secrets.GHE_SECRET}} # -B -DskipTests clean package
     #- name: Run Maven Tests
     #  run: mvn test
     - name: Publish Maven Artifacts
