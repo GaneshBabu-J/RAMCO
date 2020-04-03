@@ -49,5 +49,7 @@ jobs: # a collection of steps
       - heroku/install
       - heroku/deploy-via-git:
           app-name: $HEROKU_APP_NAME
-          force: true     
+          force: true
+          
+# commit
       
